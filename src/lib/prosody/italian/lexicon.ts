@@ -1,0 +1,101 @@
+export interface ItLexiconEntry {
+  /** Number of syllable nuclei. */
+  n: number
+  /** Index of the primary stress within those nuclei. */
+  acc: number
+}
+
+/**
+ * Curated overrides for words whose syllabification / stress can't be derived by
+ * local rules (hiatus words, glide '-ia/-io' words, sdrucciole, irregular forms).
+ * Keys are accent-stripped lowercase forms; words carrying a written accent are
+ * always handled by the accent rules instead.
+ */
+export const ITALIAN_LEXICON: Record<string, ItLexiconEntry> = {
+  // hiatus words (weak vowel carries the stress next to another vowel)
+  'paura': { n: 3, acc: 1 },
+  'violino': { n: 4, acc: 2 },
+  'febbraio': { n: 3, acc: 1 },
+  'riassunto': { n: 4, acc: 2 },
+  'diario': { n: 3, acc: 1 },
+  'idea': { n: 3, acc: 1 },
+  'ideale': { n: 4, acc: 2 },
+  'labirinto': { n: 4, acc: 2 },
+  'galatea': { n: 4, acc: 2 },
+  // gliding '-ia/-io/-ie' that local rules would split
+  'storia': { n: 2, acc: 0 },
+  'gloria': { n: 2, acc: 0 },
+  'memoria': { n: 3, acc: 1 },
+  'vittoria': { n: 3, acc: 1 },
+  'categoria': { n: 5, acc: 3 },
+  'silenzio': { n: 3, acc: 1 },
+  'silenzioso': { n: 4, acc: 2 },
+  'spazio': { n: 2, acc: 0 },
+  'spazioso': { n: 3, acc: 1 },
+  'grazia': { n: 2, acc: 0 },
+  'grazioso': { n: 3, acc: 1 },
+  'nozione': { n: 3, acc: 1 },
+  'stazione': { n: 3, acc: 1 },
+  'nazione': { n: 3, acc: 1 },
+  'italia': { n: 3, acc: 1 },
+  'sicilia': { n: 3, acc: 1 },
+  'serie': { n: 2, acc: 0 },
+  'specie': { n: 2, acc: 0 },
+  'tue': { n: 2, acc: 0 },
+  'sue': { n: 2, acc: 0 },
+  'assedio': { n: 3, acc: 1 },
+  'desio': { n: 3, acc: 1 },
+  'pria': { n: 1, acc: 0 },
+  'augurio': { n: 3, acc: 1 },
+  'audio': { n: 2, acc: 0 },
+  'mestiere': { n: 3, acc: 1 },
+  'quartiere': { n: 3, acc: 2 },
+  'cimitero': { n: 4, acc: 2 },
+  'vesuvio': { n: 3, acc: 1 },
+  'regia': { n: 2, acc: 0 },
+  'fornaio': { n: 3, acc: 1 },
+  'enciclopedia': { n: 5, acc: 3 },
+  // the tonic '-ìa' abstract-noun set (2+ nuclei before a final -ia being split)
+  'allegria': { n: 4, acc: 2 },
+  'pazzia': { n: 3, acc: 1 },
+  'follia': { n: 3, acc: 1 },
+  'poesia': { n: 4, acc: 2 },
+  'malia': { n: 3, acc: 1 },
+  'mania': { n: 3, acc: 1 },
+  'magia': { n: 3, acc: 1 },
+  'bugia': { n: 3, acc: 1 },
+  'frenesia': { n: 4, acc: 2 },
+  'armonia': { n: 4, acc: 2 },
+  'melodia': { n: 4, acc: 2 },
+  'energia': { n: 4, acc: 2 },
+  'antipatia': { n: 5, acc: 3 },
+  'simpatia': { n: 4, acc: 2 },
+  'fantasia': { n: 4, acc: 2 },
+  'ipocrisia': { n: 5, acc: 3 },
+  'malinconia': { n: 5, acc: 3 },
+  'melanconia': { n: 5, acc: 3 },
+  'utopia': { n: 4, acc: 2 },
+  'anatomia': { n: 5, acc: 3 },
+  'tirannia': { n: 4, acc: 2 },
+  // sdrucciole not covered by the -bile/-evole suffix rule
+  'abaco': { n: 3, acc: 0 },
+  'pallido': { n: 3, acc: 0 },
+  'monaco': { n: 3, acc: 0 },
+  'medico': { n: 3, acc: 1 },
+  'musica': { n: 3, acc: 0 },
+  'pubblico': { n: 3, acc: 0 },
+  'simile': { n: 3, acc: 0 },
+  'utile': { n: 3, acc: 0 },
+  'facile': { n: 3, acc: 0 },
+  'fragile': { n: 3, acc: 0 },
+  'agile': { n: 3, acc: 0 },
+  'numero': { n: 3, acc: 0 },
+  'genero': { n: 3, acc: 0 },
+  'portico': { n: 3, acc: 0 },
+  'angolo': { n: 3, acc: 0 },
+  'angelo': { n: 3, acc: 0 },
+  'margine': { n: 3, acc: 0 },
+  'cadavere': { n: 4, acc: 1 },
+  'perimetro': { n: 4, acc: 1 },
+  'satana': { n: 3, acc: 0 },
+}
